@@ -23,8 +23,6 @@ export default class LoadingData extends Component {
         </View>
         <LoadingInfo name='Moves' percent={moves} />
         <LoadingInfo name='Pokemons' percent={poke} />
-        {/* <Text>{`Moves datas: ${moves}%`}</Text>
-        <Text>{`Pokemons datas: ${poke}%`}</Text> */}
       </View>
     )
   }

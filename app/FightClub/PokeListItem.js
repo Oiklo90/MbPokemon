@@ -9,26 +9,6 @@ import {
   Image
 } from 'react-native'
 
-// class StatDisp extends Component {
-//   constructor(props) {
-//     super(props)
-//   }
- 
-//   render () {
-//     const { stats } = this.props
-//     return (
-//       <View>
-//         { Object.keys(stats).map((val, ind) => (
-//           <View>
-//             <Text>{val}</Text>
-//             <Text>{ind}</Text>
-//           </View>
-//         ))}
-//       </View>
-//     )
-//   }
-// }
-
 export default class PokeListItem extends Component {
   constructor(props) {
     super(props)

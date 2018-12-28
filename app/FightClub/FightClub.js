@@ -88,9 +88,7 @@ export default class FightClub extends Component {
   async GetChallengers (allPoke, allMoves, pokemonToDefeat) {
     const toDefeat = allPoke[pokemonToDefeat - 1]
     const toDefeatTypes = await this.getTypeInfos(toDefeat.types)
-    // const allPoke2 = _.cloneDeep(allPoke)
     let challengers = await allPoke.filter(data => {
-      // let goodMoves = []
       if (data !== null) {
         data.moveTmp = data.moves.filter(move => {
           const thisMove = allMoves[move.move.url.split('/')[6] - 1]
