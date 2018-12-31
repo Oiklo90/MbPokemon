@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import {
   StyleSheet,
   ActivityIndicator,
@@ -9,7 +9,7 @@ import {
   Image
 } from 'react-native'
 
-export default class PokeListItem extends Component {
+export default class PokeListItem extends PureComponent {
   constructor(props) {
     super(props)
     this.HandlePress = this.HandlePress.bind(this)

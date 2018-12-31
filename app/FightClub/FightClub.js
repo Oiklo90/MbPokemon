@@ -5,7 +5,7 @@ import {
   Text,
   View,
   TouchableOpacity,
-  FlatList
+  VirtualizedList
 } from 'react-native'
 import RNPickerSelect from 'react-native-picker-select'
 import PokeListItem from './PokeListItem'
@@ -119,9 +119,7 @@ export default class FightClub extends Component {
 
   _renderList = ({item}) => (
     <PokeListItem data={item} onPressItem={this._onPressItem} />
-  )
-
-  _keyExtractor = (item, index) => item.id.toString()
+  ) 
 
   render () {
     const { allPoke, pokemonToDefeat } = this.props
@@ -139,7 +137,7 @@ export default class FightClub extends Component {
           </View>
         </View>
         {!!challengers ?
-          <FlatList keyExtractor={this._keyExtractor} data={challengers} renderItem={this._renderList} />
+          <VirtualizedList keyExtractor={data => data.id.toString()} data={challengers} renderItem={this._renderList} getItem={(data, index) => data[index]} getItemCount={data => data.length}/>
           :
           <ActivityIndicator size="large" color="#0000ff" />
         }
